@@ -17,6 +17,9 @@ RUN pip install --no-cache-dir mmcv-full==1.3.17 -f https://download.openmmlab.c
 
 # Install MMDetection
 RUN conda clean --all
+
+ARG CACHEBUST=1 
+# add this for not using cached git version during build
 RUN git clone https://github.com/YHDING23/dlt-detection /dlt-detection
 WORKDIR /dlt-detection
 ENV FORCE_CUDA="1"
