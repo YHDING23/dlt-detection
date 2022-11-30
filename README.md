@@ -9,7 +9,9 @@ We provide a [Dockerfile](https://github.com/YHDING23/dlt-detection/blob/main/do
 Run it with:
 
 ```shell
-docker run --gpus all --shm-size=8g -it -v /nfs_1/data/coco:/data/coco centaurusinfra/dlt-detection
+sudo docker run --gpus all --shm-size=8g -it \
+-v /nfs_1/data/coco:/data/coco \
+centaurusinfra/dlt-detection
 ```
 
 After you adjust your parameters, build your image with:
@@ -17,7 +19,7 @@ After you adjust your parameters, build your image with:
 ```shell
 # build an image with PyTorch 1.6, CUDA 10.1
 # If you prefer other versions, just modified the Dockerfile
-docker build -t your_image_for_detection docker/
+sudo docker build -t your_image_for_detection docker/
 ```
 
 Or you can also push it to our docker hub registry:
